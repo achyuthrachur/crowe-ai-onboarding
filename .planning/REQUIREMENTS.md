@@ -9,7 +9,7 @@
 
 ### Infrastructure
 
-- [ ] **INFRA-01**: Vercel project created and linked to GitHub repo `achyuthrachur/crowe-ai-onboarding`
+- [x] **INFRA-01**: Vercel project created and linked to GitHub repo `achyuthrachur/crowe-ai-onboarding`
 - [ ] **INFRA-02**: Neon Postgres database provisioned and connected to Vercel project (via Vercel Marketplace integration)
 - [ ] **INFRA-03**: pgvector extension enabled on Neon database
 - [ ] **INFRA-04**: All required environment variables present in `.env.local` and Vercel production (OPENAI_API_KEY, DATABASE_URL, INGEST_SECRET)
@@ -144,7 +144,7 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INFRA-01 | Phase 1 | Pending |
+| INFRA-01 | Phase 1 | Complete |
 | INFRA-02 | Phase 1 | Pending |
 | INFRA-03 | Phase 1 | Pending |
 | INFRA-04 | Phase 1 | Pending |
