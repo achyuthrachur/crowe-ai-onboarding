@@ -33,7 +33,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Connecting to the Neon database and running `SELECT * FROM pg_extension WHERE extname = 'vector'` returns one row
   3. Running `echo $OPENAI_API_KEY` in the project shell returns the key without error; INGEST_SECRET and DATABASE_URL are also present
   4. CLAUDE.md and DESIGN.md exist at the `crowe-ai-onboarding` project root and contain Crowe brand and development conventions
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Git init, GitHub repo create, Vercel link (INFRA-01)
+- [ ] 01-02-PLAN.md — Neon Marketplace provisioning, pgvector enable, env pull (INFRA-02, INFRA-03)
+- [ ] 01-03-PLAN.md — Env vars setup, .env.example, CLAUDE.md + DESIGN.md at root (INFRA-04, INFRA-05)
 
 ### Phase 2: RAG App Scaffold
 **Goal**: A runnable Next.js 14 application exists with Crowe brand applied, the doc_chunks table created, and all lib utilities ready for use
@@ -134,7 +139,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Infrastructure Setup | 0/TBD | Not started | - |
+| 1. Infrastructure Setup | 0/3 | Not started | - |
 | 2. RAG App Scaffold | 0/TBD | Not started | - |
 | 3. Ingestion Pipeline | 0/TBD | Not started | - |
 | 4. Chat API | 0/TBD | Not started | - |
