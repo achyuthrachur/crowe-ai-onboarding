@@ -50,7 +50,12 @@ Plans:
   3. Running `\d doc_chunks` in psql against the Neon database shows the correct schema (id, doc_id, doc_title, chunk_index, content, embedding vector(1536), created_at) — no index yet
   4. Importing `db.ts`, `chunker.ts`, and `embeddings.ts` in a test script runs without TypeScript errors
   5. The `docs/` folder contains 8 stub markdown files named `01-` through `08-`
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Next.js scaffold, install @neondatabase/serverless + openai, shadcn init (RAGG-01)
+- [ ] 02-02-PLAN.md — Crowe brand tokens in tailwind.config.ts + globals.css, page.tsx placeholder (RAGG-02)
+- [ ] 02-03-PLAN.md — db.ts, chunker.ts, embeddings.ts, migration script + run, docs/ confirmed (RAGG-03, RAGG-04, RAGG-05, RAGG-06, RAGG-07)
 
 ### Phase 3: Ingestion Pipeline
 **Goal**: All 8 docs are chunked, embedded, and stored in pgvector with an IVFFlat index built after the data is loaded
@@ -140,7 +145,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Infrastructure Setup | 3/3 | Complete    | 2026-03-06 |
-| 2. RAG App Scaffold | 0/TBD | Not started | - |
+| 2. RAG App Scaffold | 0/3 | Not started | - |
 | 3. Ingestion Pipeline | 0/TBD | Not started | - |
 | 4. Chat API | 0/TBD | Not started | - |
 | 5. Chat UI | 0/TBD | Not started | - |
