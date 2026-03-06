@@ -12,8 +12,8 @@
 - [x] **INFRA-01**: Vercel project created and linked to GitHub repo `achyuthrachur/crowe-ai-onboarding`
 - [ ] **INFRA-02**: Neon Postgres database provisioned and connected to Vercel project (via Vercel Marketplace integration)
 - [ ] **INFRA-03**: pgvector extension enabled on Neon database
-- [ ] **INFRA-04**: All required environment variables present in `.env.local` and Vercel production (OPENAI_API_KEY, DATABASE_URL, INGEST_SECRET)
-- [ ] **INFRA-05**: CLAUDE.md and DESIGN.md present at `crowe-ai-onboarding` project root before any code is written
+- [x] **INFRA-04**: All required environment variables present in `.env.local` and Vercel production (OPENAI_API_KEY, DATABASE_URL, INGEST_SECRET)
+- [x] **INFRA-05**: CLAUDE.md and DESIGN.md present at `crowe-ai-onboarding` project root before any code is written
 - [ ] **INFRA-06**: CLAUDE.md and DESIGN.md present at `crowe-mcp-server` project root before any code is written
 
 ### RAG App Scaffold
@@ -147,8 +147,8 @@
 | INFRA-01 | Phase 1 | Complete |
 | INFRA-02 | Phase 1 | Pending |
 | INFRA-03 | Phase 1 | Pending |
-| INFRA-04 | Phase 1 | Pending |
-| INFRA-05 | Phase 1 | Pending |
+| INFRA-04 | Phase 1 | Complete |
+| INFRA-05 | Phase 1 | Complete |
 | INFRA-06 | Phase 7 | Pending |
 | RAGG-01 | Phase 2 | Pending |
 | RAGG-02 | Phase 2 | Pending |
