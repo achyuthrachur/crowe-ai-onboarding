@@ -20,11 +20,11 @@
 
 - [x] **RAGG-01**: Next.js 14 App Router project initialized with TypeScript, Tailwind CSS, shadcn/ui
 - [x] **RAGG-02**: Crowe brand tokens in `globals.css` and `tailwind.config.ts` matching DESIGN.md (Indigo Dark, Amber, warm neutrals, indigo-tinted shadows)
-- [ ] **RAGG-03**: `doc_chunks` table created in Neon Postgres (id, doc_id, doc_title, chunk_index, content, embedding vector(1536), created_at) — no index at this stage
-- [ ] **RAGG-04**: `src/lib/db.ts` — Neon serverless Postgres client (using `@neondatabase/serverless`)
-- [ ] **RAGG-05**: `src/lib/chunker.ts` — heading-aware markdown chunker (split on ##/### boundaries, 300-600 token target, 50-token overlap, heading prefix on each chunk, merge sections under 100 tokens)
-- [ ] **RAGG-06**: `src/lib/embeddings.ts` — OpenAI embeddings wrapper using `text-embedding-3-small` (1536 dimensions)
-- [ ] **RAGG-07**: `docs/` folder with 8 stub markdown files (`01-` through `08-`) — real content dropped in manually
+- [x] **RAGG-03**: `doc_chunks` table created in Neon Postgres (id, doc_id, doc_title, chunk_index, content, embedding vector(1536), created_at) — no index at this stage
+- [x] **RAGG-04**: `src/lib/db.ts` — Neon serverless Postgres client (using `@neondatabase/serverless`)
+- [x] **RAGG-05**: `src/lib/chunker.ts` — heading-aware markdown chunker (split on ##/### boundaries, 300-600 token target, 50-token overlap, heading prefix on each chunk, merge sections under 100 tokens)
+- [x] **RAGG-06**: `src/lib/embeddings.ts` — OpenAI embeddings wrapper using `text-embedding-3-small` (1536 dimensions)
+- [x] **RAGG-07**: `docs/` folder with 8 stub markdown files (`01-` through `08-`) — real content dropped in manually
 
 ### Ingestion Pipeline
 
@@ -152,11 +152,11 @@
 | INFRA-06 | Phase 7 | Pending |
 | RAGG-01 | Phase 2 | Complete |
 | RAGG-02 | Phase 2 | Complete |
-| RAGG-03 | Phase 2 | Pending |
-| RAGG-04 | Phase 2 | Pending |
-| RAGG-05 | Phase 2 | Pending |
-| RAGG-06 | Phase 2 | Pending |
-| RAGG-07 | Phase 2 | Pending |
+| RAGG-03 | Phase 2 | Complete |
+| RAGG-04 | Phase 2 | Complete |
+| RAGG-05 | Phase 2 | Complete |
+| RAGG-06 | Phase 2 | Complete |
+| RAGG-07 | Phase 2 | Complete |
 | INGS-01 | Phase 3 | Pending |
 | INGS-02 | Phase 3 | Pending |
 | INGS-03 | Phase 3 | Pending |
