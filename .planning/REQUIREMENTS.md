@@ -38,14 +38,14 @@
 
 ### Chat API
 
-- [ ] **CHAT-01**: `src/app/api/chat/route.ts` — POST `/api/chat` accepts `{ message, history }`, returns `{ reply, sources }`
-- [ ] **CHAT-02**: Query embedding generated via `text-embedding-3-small` on incoming message
+- [x] **CHAT-01**: `src/app/api/chat/route.ts` — POST `/api/chat` accepts `{ message, history }`, returns `{ reply, sources }`
+- [x] **CHAT-02**: Query embedding generated via `text-embedding-3-small` on incoming message
 - [x] **CHAT-03**: Cosine similarity search using correct operator: `1 - (embedding <=> $1::vector) > 0.3` (distance, not similarity — documented in code comment)
 - [x] **CHAT-04**: Top-5 chunks retrieved (`topK=5`), filtered to similarity >= 0.3
 - [x] **CHAT-05**: When no chunks meet 0.3 threshold, returns explicit fallback: "I don't have information on that in the knowledge base."
 - [x] **CHAT-06**: Source citations returned as `{ docId, docTitle, similarity }[]` with every reply
-- [ ] **CHAT-07**: gpt-4o completion with system prompt from PRD (`temperature: 0.2`, `max_tokens: 800`, `stream: false`)
-- [ ] **CHAT-08**: Manual test passes: "what colors does Crowe use?" returns answer with source citation from branding doc
+- [x] **CHAT-07**: gpt-4o completion with system prompt from PRD (`temperature: 0.2`, `max_tokens: 800`, `stream: false`)
+- [x] **CHAT-08**: Manual test passes: "what colors does Crowe use?" returns answer with source citation from branding doc
 
 ### Chat UI
 
@@ -164,14 +164,14 @@
 | INGS-05 | Phase 3 | Complete |
 | INGS-06 | Phase 3 | Complete |
 | INGS-07 | Phase 3 | Complete |
-| CHAT-01 | Phase 4 | Pending |
-| CHAT-02 | Phase 4 | Pending |
+| CHAT-01 | Phase 4 | Complete |
+| CHAT-02 | Phase 4 | Complete |
 | CHAT-03 | Phase 4 | Complete |
 | CHAT-04 | Phase 4 | Complete |
 | CHAT-05 | Phase 4 | Complete |
 | CHAT-06 | Phase 4 | Complete |
-| CHAT-07 | Phase 4 | Pending |
-| CHAT-08 | Phase 4 | Pending |
+| CHAT-07 | Phase 4 | Complete |
+| CHAT-08 | Phase 4 | Complete |
 | UI-01 | Phase 5 | Pending |
 | UI-02 | Phase 5 | Pending |
 | UI-03 | Phase 5 | Pending |

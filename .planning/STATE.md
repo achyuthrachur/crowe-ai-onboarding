@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-01-PLAN.md (retrieval module + Vitest infrastructure)
-last_updated: "2026-03-07T05:43:33.563Z"
+stopped_at: "Paused at checkpoint:human-verify in 04-02-PLAN.md"
+last_updated: "2026-03-07T05:46:47.227Z"
 last_activity: 2026-03-07 — Phase 3 Plan 01 complete; src/lib/ingest.ts created
 progress:
   total_phases: 9
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 11
-  completed_plans: 10
+  completed_plans: 11
   percent: 26
 ---
 
@@ -60,6 +60,7 @@ Progress: [██░░░░░░░░] 26%
 | Phase 03-ingestion-pipeline P02 | 1 | 2 tasks | 2 files |
 | Phase 03-ingestion-pipeline P03 | 20 | 2 tasks | 1 files |
 | Phase 04-chat-api P01 | 3 | 2 tasks | 5 files |
+| Phase 04-chat-api P02 | 1 | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -97,6 +98,9 @@ Recent decisions affecting current work:
 - [Phase 03-ingestion-pipeline]: Fail-closed auth order: INGEST_SECRET env check (500) before header match (401) — avoids leaking that a secret exists when env is misconfigured
 - [Phase 04-chat-api]: Dynamic import of db.ts inside retrieveChunks — prevents module-load-time env var throw from blocking unit tests of pure helper functions
 - [Phase 04-chat-api]: Lazy db.ts import pattern established for retrieval.ts — import db inside async function body, not at module top-level
+- [Phase 04-chat-api]: Output field is reply (not answer) — matches REQUIREMENTS.md and Phase 5 contract
+- [Phase 04-chat-api]: Fallback check before GPT-4o — empty context produces hallucinated answers, skip entirely
+- [Phase 04-chat-api]: OPENAI_MODEL env var defaults to gpt-4o — swap models without code changes
 
 ### Pending Todos
 
@@ -110,6 +114,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T05:43:33.556Z
-Stopped at: Completed 04-01-PLAN.md (retrieval module + Vitest infrastructure)
+Last session: 2026-03-07T05:46:47.222Z
+Stopped at: Paused at checkpoint:human-verify in 04-02-PLAN.md
 Resume file: None
