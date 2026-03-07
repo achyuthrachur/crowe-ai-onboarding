@@ -67,7 +67,12 @@ Plans:
   3. `SELECT indexname FROM pg_indexes WHERE tablename = 'doc_chunks'` returns the IVFFlat index after ingestion completes
   4. A POST to `/api/ingest` without the `x-ingest-secret` header returns 401 or 500 (fail-closed enforcement)
   5. All embeddings in doc_chunks have dimension 1536 (verifiable via `SELECT vector_dims(embedding) FROM doc_chunks LIMIT 1`)
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — src/lib/ingest.ts shared module (ingestDoc + ingestAll + IVFFlat) (INGS-01, INGS-02, INGS-03, INGS-04, INGS-07)
+- [ ] 03-02-PLAN.md — scripts/ingest.ts CLI entry point + package.json ingest script (INGS-01, INGS-05, INGS-07)
+- [ ] 03-03-PLAN.md — src/app/api/ingest/route.ts HTTP endpoint with fail-closed auth (INGS-06)
 
 ### Phase 4: Chat API
 **Goal**: A working chat endpoint returns grounded answers with source citations for on-topic queries and an explicit fallback for off-topic queries
@@ -146,7 +151,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 |-------|----------------|--------|-----------|
 | 1. Infrastructure Setup | 3/3 | Complete    | 2026-03-06 |
 | 2. RAG App Scaffold | 3/3 | Complete    | 2026-03-07 |
-| 3. Ingestion Pipeline | 0/TBD | Not started | - |
+| 3. Ingestion Pipeline | 0/3 | Not started | - |
 | 4. Chat API | 0/TBD | Not started | - |
 | 5. Chat UI | 0/TBD | Not started | - |
 | 6. RAG App Deployment | 0/TBD | Not started | - |
