@@ -83,7 +83,11 @@ Plans:
   2. A POST with a clearly off-topic message (e.g., "what is the capital of France?") returns the exact fallback text: "I don't have information on that in the knowledge base."
   3. The `sources` array in every reply contains objects with `docId`, `docTitle`, and `similarity` fields
   4. Manual inspection of the route code confirms the cosine similarity operator is `1 - (embedding <=> $1::vector) > 0.3` with a code comment explaining the distance-vs-similarity distinction
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Vitest setup + src/lib/retrieval.ts (pure helpers + pgvector query) + unit tests (CHAT-03, CHAT-04, CHAT-05, CHAT-06)
+- [ ] 04-02-PLAN.md — src/app/api/chat/route.ts + end-to-end curl verification checkpoint (CHAT-01, CHAT-02, CHAT-03, CHAT-04, CHAT-05, CHAT-06, CHAT-07, CHAT-08)
 
 ### Phase 5: Chat UI
 **Goal**: A new hire visiting the app can ask a question and receive a formatted, branded answer with source citations — on any screen size from 375px up
@@ -152,7 +156,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | 1. Infrastructure Setup | 3/3 | Complete    | 2026-03-06 |
 | 2. RAG App Scaffold | 3/3 | Complete    | 2026-03-07 |
 | 3. Ingestion Pipeline | 3/3 | Complete    | 2026-03-07 |
-| 4. Chat API | 0/TBD | Not started | - |
+| 4. Chat API | 1/2 | In Progress|  |
 | 5. Chat UI | 0/TBD | Not started | - |
 | 6. RAG App Deployment | 0/TBD | Not started | - |
 | 7. MCP Server Scaffold | 0/TBD | Not started | - |

@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-03-PLAN.md (ingest HTTP route + human-verify checkpoint passed)
-last_updated: "2026-03-07T04:52:28.402Z"
+stopped_at: Completed 04-01-PLAN.md (retrieval module + Vitest infrastructure)
+last_updated: "2026-03-07T05:43:33.563Z"
 last_activity: 2026-03-07 — Phase 3 Plan 01 complete; src/lib/ingest.ts created
 progress:
   total_phases: 9
   completed_phases: 3
-  total_plans: 9
-  completed_plans: 9
+  total_plans: 11
+  completed_plans: 10
   percent: 26
 ---
 
@@ -59,6 +59,7 @@ Progress: [██░░░░░░░░] 26%
 | Phase 03-ingestion-pipeline P03 | 8 | 1 tasks | 2 files |
 | Phase 03-ingestion-pipeline P02 | 1 | 2 tasks | 2 files |
 | Phase 03-ingestion-pipeline P03 | 20 | 2 tasks | 1 files |
+| Phase 04-chat-api P01 | 3 | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -94,6 +95,8 @@ Recent decisions affecting current work:
 - [Phase 03-ingestion-pipeline]: NODE_TLS_REJECT_UNAUTHORIZED=0 placed in npm script string (not .env files) — runtime OpenAI calls go through Crowe SSL proxy; must stay shell-only
 - [Phase 03-ingestion-pipeline]: maxDuration = 60 must be a top-level named export in route.ts — Vercel reads it at build time, not runtime
 - [Phase 03-ingestion-pipeline]: Fail-closed auth order: INGEST_SECRET env check (500) before header match (401) — avoids leaking that a secret exists when env is misconfigured
+- [Phase 04-chat-api]: Dynamic import of db.ts inside retrieveChunks — prevents module-load-time env var throw from blocking unit tests of pure helper functions
+- [Phase 04-chat-api]: Lazy db.ts import pattern established for retrieval.ts — import db inside async function body, not at module top-level
 
 ### Pending Todos
 
@@ -107,6 +110,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T04:49:02.202Z
-Stopped at: Completed 03-03-PLAN.md (ingest HTTP route + human-verify checkpoint passed)
+Last session: 2026-03-07T05:43:33.556Z
+Stopped at: Completed 04-01-PLAN.md (retrieval module + Vitest infrastructure)
 Resume file: None
