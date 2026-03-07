@@ -19,7 +19,7 @@
 ### RAG App Scaffold
 
 - [x] **RAGG-01**: Next.js 14 App Router project initialized with TypeScript, Tailwind CSS, shadcn/ui
-- [ ] **RAGG-02**: Crowe brand tokens in `globals.css` and `tailwind.config.ts` matching DESIGN.md (Indigo Dark, Amber, warm neutrals, indigo-tinted shadows)
+- [x] **RAGG-02**: Crowe brand tokens in `globals.css` and `tailwind.config.ts` matching DESIGN.md (Indigo Dark, Amber, warm neutrals, indigo-tinted shadows)
 - [ ] **RAGG-03**: `doc_chunks` table created in Neon Postgres (id, doc_id, doc_title, chunk_index, content, embedding vector(1536), created_at) — no index at this stage
 - [ ] **RAGG-04**: `src/lib/db.ts` — Neon serverless Postgres client (using `@neondatabase/serverless`)
 - [ ] **RAGG-05**: `src/lib/chunker.ts` — heading-aware markdown chunker (split on ##/### boundaries, 300-600 token target, 50-token overlap, heading prefix on each chunk, merge sections under 100 tokens)
@@ -151,7 +151,7 @@
 | INFRA-05 | Phase 1 | Complete |
 | INFRA-06 | Phase 7 | Pending |
 | RAGG-01 | Phase 2 | Complete |
-| RAGG-02 | Phase 2 | Pending |
+| RAGG-02 | Phase 2 | Complete |
 | RAGG-03 | Phase 2 | Pending |
 | RAGG-04 | Phase 2 | Pending |
 | RAGG-05 | Phase 2 | Pending |

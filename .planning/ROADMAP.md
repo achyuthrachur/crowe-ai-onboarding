@@ -13,7 +13,7 @@ Build two complementary systems that give new Crowe AI practice hires instant ac
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Infrastructure Setup** - Provision Vercel, Neon Postgres with pgvector, and set environment variables (completed 2026-03-06)
-- [ ] **Phase 2: RAG App Scaffold** - Initialize Next.js 14 project, apply Crowe brand tokens, create DB schema, and build lib utilities
+- [x] **Phase 2: RAG App Scaffold** - Initialize Next.js 14 project, apply Crowe brand tokens, create DB schema, and build lib utilities (completed 2026-03-07)
 - [ ] **Phase 3: Ingestion Pipeline** - Chunk docs, batch-embed, upsert to pgvector, build IVFFlat index post-ingestion
 - [ ] **Phase 4: Chat API** - Build retrieval logic, cosine similarity search, fallback handling, and gpt-4o completion
 - [ ] **Phase 5: Chat UI** - Full Crowe-branded chat interface with markdown, source chips, and starter prompts
@@ -145,7 +145,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Infrastructure Setup | 3/3 | Complete    | 2026-03-06 |
-| 2. RAG App Scaffold | 1/3 | In Progress|  |
+| 2. RAG App Scaffold | 3/3 | Complete   | 2026-03-07 |
 | 3. Ingestion Pipeline | 0/TBD | Not started | - |
 | 4. Chat API | 0/TBD | Not started | - |
 | 5. Chat UI | 0/TBD | Not started | - |

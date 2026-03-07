@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 02-rag-app-scaffold 02-01-PLAN.md
-last_updated: "2026-03-07T02:24:45.852Z"
+stopped_at: Completed 02-rag-app-scaffold 02-02-PLAN.md
+last_updated: "2026-03-07T02:31:50.312Z"
 last_activity: 2026-03-06 — Roadmap created; all 9 phases defined with success criteria; 61/61 requirements mapped
 progress:
   total_phases: 9
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 6
-  completed_plans: 4
+  completed_plans: 6
   percent: 0
 ---
 
@@ -53,6 +53,8 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-infrastructure-setup P01 | 2 | 3 tasks | 2 files |
 | Phase 01-infrastructure-setup P03 | 8 | 3 tasks | 4 files |
 | Phase 02-rag-app-scaffold P01 | 7 | 2 tasks | 22 files |
+| Phase 02-rag-app-scaffold P03 | 15 | 3 tasks | 5 files |
+| Phase 02-rag-app-scaffold P02 | 4 | 2 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -73,6 +75,11 @@ Recent decisions affecting current work:
 - [Phase 02-rag-app-scaffold]: Google Fonts (next/font/google) removed from layout.tsx — Crowe SSL proxy blocks fonts.googleapis.com at build time; use local fonts or system fonts instead
 - [Phase 02-rag-app-scaffold]: turbopackUseSystemTlsCerts: true added to next.config.ts — required for Crowe network; turbopack.root set to __dirname to fix workspace root detection
 - [Phase 02-rag-app-scaffold]: shadcn@latest init --defaults (not --yes alone) required — shadcn 4.x uses --defaults to suppress interactive library selection prompt
+- [Phase 02-rag-app-scaffold]: tsx installed as dev dependency for running TypeScript migration scripts without a build step
+- [Phase 02-rag-app-scaffold]: Scripts using src/lib/ must load env vars from .env.local before running — tsx does not auto-load Next.js env files; use: export $(grep -v '#' .env.local | xargs) && NODE_TLS_REJECT_UNAUTHORIZED=0 npx tsx scripts/<script>.ts
+- [Phase 02-rag-app-scaffold]: No IVFFlat index in doc_chunks migration — deferred to Phase 3 after ingestion
+- [Phase 02-rag-app-scaffold]: Tailwind v4 does not use tailwind.config.ts for token generation — @theme in globals.css is the v4 mechanism; tailwind.config.ts kept as documentation artifact only
+- [Phase 02-rag-app-scaffold]: page.tsx is a minimal Server Component with no lib/ imports — bg-crowe-indigo-dark proves token resolution at build time
 
 ### Pending Todos
 
@@ -86,6 +93,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T02:24:45.848Z
-Stopped at: Completed 02-rag-app-scaffold 02-01-PLAN.md
+Last session: 2026-03-07T02:31:50.305Z
+Stopped at: Completed 02-rag-app-scaffold 02-02-PLAN.md
 Resume file: None
