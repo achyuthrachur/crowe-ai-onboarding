@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-03-PLAN.md (ingest HTTP route) — awaiting human verification checkpoint
-last_updated: "2026-03-07T04:25:27.451Z"
+stopped_at: Completed 03-02-PLAN.md (ingest CLI entry point + npm script)
+last_updated: "2026-03-07T04:25:39.263Z"
 last_activity: 2026-03-07 — Phase 3 Plan 01 complete; src/lib/ingest.ts created
 progress:
   total_phases: 9
@@ -89,6 +89,8 @@ Recent decisions affecting current work:
 - [Phase 03-ingestion-pipeline P01]: console.log inside ingestDoc (not CLI wrapper) so HTTP route also emits progress to Vercel logs
 - [Phase 03-ingestion-pipeline]: maxDuration = 60 must be top-level export in route.ts — Vercel reads at build time not runtime
 - [Phase 03-ingestion-pipeline]: Fail-closed auth order: INGEST_SECRET env check (500) before header match (401) to avoid leaking secret existence
+- [Phase 03-ingestion-pipeline]: scripts/ingest.ts is a thin wrapper with zero business logic — all ingestion logic lives in src/lib/ingest.ts for reuse by the HTTP route
+- [Phase 03-ingestion-pipeline]: NODE_TLS_REJECT_UNAUTHORIZED=0 placed in npm script string (not .env files) — runtime OpenAI calls go through Crowe SSL proxy; must stay shell-only
 
 ### Pending Todos
 
@@ -102,6 +104,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T04:25:14.861Z
-Stopped at: Completed 03-03-PLAN.md (ingest HTTP route) — awaiting human verification checkpoint
+Last session: 2026-03-07T04:25:39.253Z
+Stopped at: Completed 03-02-PLAN.md (ingest CLI entry point + npm script)
 Resume file: None
