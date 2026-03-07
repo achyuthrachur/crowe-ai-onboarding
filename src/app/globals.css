@@ -4,6 +4,72 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ─── Crowe Brand Tokens (Tailwind v4 @theme) ─────────────────────────────
+   Source: CLAUDE.md Section 2.2 — copied VERBATIM.
+   In Tailwind v4, custom tokens live here (no tailwind.config.ts).
+   Class names: bg-crowe-indigo-dark, text-crowe-amber, shadow-crowe-card, etc.
+   ─────────────────────────────────────────────────────────────────────── */
+@theme {
+  /* Crowe palette */
+  --color-crowe-amber-bright: #FFD231;
+  --color-crowe-amber: #F5A800;
+  --color-crowe-amber-dark: #D7761D;
+
+  --color-crowe-indigo-bright: #003F9F;
+  --color-crowe-indigo: #002E62;
+  --color-crowe-indigo-dark: #011E41;
+
+  --color-crowe-teal-bright: #16D9BC;
+  --color-crowe-teal: #05AB8C;
+  --color-crowe-teal-dark: #0C7876;
+
+  --color-crowe-cyan-light: #8FE1FF;
+  --color-crowe-cyan: #54C0E8;
+  --color-crowe-cyan-dark: #007DA3;
+
+  --color-crowe-blue-light: #32A8FD;
+  --color-crowe-blue: #0075C9;
+  --color-crowe-blue-dark: #0050AD;
+
+  --color-crowe-violet-bright: #EA80FF;
+  --color-crowe-violet: #B14FC5;
+  --color-crowe-violet-dark: #612080;
+
+  --color-crowe-coral-bright: #FF526F;
+  --color-crowe-coral: #E5376B;
+  --color-crowe-coral-dark: #992A5C;
+
+  /* Tint scale */
+  --color-tint-950: #1a1d2b;
+  --color-tint-900: #2d3142;
+  --color-tint-700: #545968;
+  --color-tint-500: #8b90a0;
+  --color-tint-300: #c8cbd6;
+  --color-tint-200: #dfe1e8;
+  --color-tint-100: #eef0f4;
+  --color-tint-50:  #f6f7fa;
+
+  /* Font families */
+  --font-display: 'Helvetica Now Display', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-body:    'Helvetica Now Text',    'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', 'IBM Plex Mono', Consolas, monospace;
+
+  /* Box shadows */
+  --shadow-crowe-sm:    0 1px 3px rgba(1,30,65,0.06), 0 1px 2px rgba(1,30,65,0.04);
+  --shadow-crowe-md:    0 4px 8px -2px rgba(1,30,65,0.06), 0 2px 4px -1px rgba(1,30,65,0.04);
+  --shadow-crowe-lg:    0 6px 16px -4px rgba(1,30,65,0.07), 0 4px 6px -2px rgba(1,30,65,0.04);
+  --shadow-crowe-xl:    0 12px 32px -8px rgba(1,30,65,0.08), 0 8px 16px -4px rgba(1,30,65,0.03);
+  --shadow-crowe-hover: 0 8px 24px -4px rgba(1,30,65,0.10), 0 4px 8px -2px rgba(1,30,65,0.04);
+  --shadow-crowe-card:  0 1px 3px rgba(1,30,65,0.04), 0 6px 16px rgba(1,30,65,0.04), 0 12px 32px rgba(1,30,65,0.02);
+  --shadow-amber-glow:  0 4px 16px rgba(245,168,0,0.20);
+
+  /* Background utility colors */
+  --color-page:           #f8f9fc;
+  --color-section:        #f6f7fa;
+  --color-section-warm:   #f0f2f8;
+  --color-section-amber:  #fff8eb;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -47,31 +113,35 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* ─── shadcn CSS Variables — Crowe HSL overrides ──────────────────────────
+   Source: CLAUDE.md Section 4.2 — copied VERBATIM.
+   ─────────────────────────────────────────────────────────────────────── */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.58 0.22 27);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --background: 225 33% 98%;              /* #f8f9fc warm off-white */
+  --foreground: 228 20% 22%;              /* #2d3142 warm dark */
+  --card: 225 50% 99%;                    /* #fafbfd lifted card */
+  --card-foreground: 228 20% 22%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 228 20% 22%;
+  --primary: 215 98% 13%;                 /* Crowe Indigo Dark */
+  --primary-foreground: 225 33% 97%;
+  --secondary: 39 100% 48%;               /* Crowe Amber */
+  --secondary-foreground: 215 98% 13%;
+  --muted: 225 20% 96%;                   /* #f0f2f8 indigo-wash */
+  --muted-foreground: 228 10% 37%;        /* #545968 */
+  --accent: 39 100% 48%;
+  --accent-foreground: 215 98% 13%;
+  --destructive: 341 79% 56%;             /* Crowe Coral */
+  --destructive-foreground: 225 33% 97%;
+  --border: 226 17% 89%;                  /* #dfe1e8 soft */
+  --input: 226 17% 89%;
+  --ring: 215 100% 19%;                   /* Crowe Indigo Core */
+  --radius: 0.75rem;
   --chart-1: oklch(0.809 0.105 251.813);
   --chart-2: oklch(0.623 0.214 259.815);
   --chart-3: oklch(0.546 0.245 262.881);
   --chart-4: oklch(0.488 0.243 264.376);
   --chart-5: oklch(0.424 0.199 265.638);
-  --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
