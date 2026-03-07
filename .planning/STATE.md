@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-06T22:57:12.409Z"
+stopped_at: Completed 02-rag-app-scaffold 02-01-PLAN.md
+last_updated: "2026-03-07T02:24:45.852Z"
 last_activity: 2026-03-06 — Roadmap created; all 9 phases defined with success criteria; 61/61 requirements mapped
 progress:
   total_phases: 9
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 6
+  completed_plans: 4
   percent: 0
 ---
 
@@ -52,6 +52,7 @@ Progress: [░░░░░░░░░░] 0%
 *Updated after each plan completion*
 | Phase 01-infrastructure-setup P01 | 2 | 3 tasks | 2 files |
 | Phase 01-infrastructure-setup P03 | 8 | 3 tasks | 4 files |
+| Phase 02-rag-app-scaffold P01 | 7 | 2 tasks | 22 files |
 
 ## Accumulated Context
 
@@ -68,6 +69,10 @@ Recent decisions affecting current work:
 - [Phase 01-infrastructure-setup]: Used --scope achyuth-rachurs-projects with vercel link to deterministically select team (orgId team_jTMSsUBJBbOqgNTyjjsr9PY2)
 - [Phase 01-infrastructure-setup]: OPENAI_API_KEY and INGEST_SECRET added as placeholders in .env.local — user must replace with real values and add to Vercel dashboard
 - [Phase 01-infrastructure-setup]: Root CLAUDE.md = docs/CLAUDE.md + project-specific section appended; authoritative source for downstream AI agents
+- [Phase 02-rag-app-scaffold]: next.config.ts (not .js) generated — Next.js 16 defaults to TypeScript config
+- [Phase 02-rag-app-scaffold]: Google Fonts (next/font/google) removed from layout.tsx — Crowe SSL proxy blocks fonts.googleapis.com at build time; use local fonts or system fonts instead
+- [Phase 02-rag-app-scaffold]: turbopackUseSystemTlsCerts: true added to next.config.ts — required for Crowe network; turbopack.root set to __dirname to fix workspace root detection
+- [Phase 02-rag-app-scaffold]: shadcn@latest init --defaults (not --yes alone) required — shadcn 4.x uses --defaults to suppress interactive library selection prompt
 
 ### Pending Todos
 
@@ -81,6 +86,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T22:57:12.399Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-rag-app-scaffold/02-CONTEXT.md
+Last session: 2026-03-07T02:24:45.848Z
+Stopped at: Completed 02-rag-app-scaffold 02-01-PLAN.md
+Resume file: None
