@@ -15,7 +15,7 @@ provides:
   - Vercel timeout extension via top-level maxDuration = 60 export
   - Single-doc re-ingest path via optional {docId} body param
 
-affects: [04-rag-query-pipeline, future-maintenance]
+affects: [04-rag-query-pipeline, 05-chat-ui, future-maintenance]
 
 # Tech tracking
 tech-stack:
@@ -43,8 +43,8 @@ patterns-established:
 requirements-completed: [INGS-06]
 
 # Metrics
-duration: 8min
-completed: 2026-03-06
+duration: ~20min total (8min implementation + checkpoint verification)
+completed: 2026-03-07
 ---
 
 # Phase 3 Plan 03: Ingest HTTP Route Summary
@@ -53,10 +53,10 @@ completed: 2026-03-06
 
 ## Performance
 
-- **Duration:** ~8 min
+- **Duration:** ~20 min total (8min implementation + checkpoint verification)
 - **Started:** 2026-03-06T00:00:00Z
-- **Completed:** 2026-03-06T00:08:00Z
-- **Tasks:** 1 of 2 (Task 2 is a human-verify checkpoint — awaiting verification)
+- **Completed:** 2026-03-07
+- **Tasks:** 2 of 2 (Task 1: implementation, Task 2: human-verify checkpoint — PASSED)
 - **Files modified:** 2
 
 ## Accomplishments
@@ -66,10 +66,12 @@ completed: 2026-03-06
 - Vercel Hobby plan timeout extended from 10s to 60s via top-level `export const maxDuration = 60`
 - Optional `{docId}` body enables single-doc re-ingest (skips IVFFlat rebuild, faster for doc updates)
 - TypeScript clean — `npx tsc --noEmit` passes with no errors
+- Human verification checkpoint passed all 7 steps: TypeScript clean, CLI ingested 8 docs, Neon embeddings confirmed (1536 dims, zero nulls, 8 doc_ids), IVFFlat index present, idempotency confirmed (row count stable on re-run), curl auth tests: no-header → 401, wrong-header → 401, correct-header → 200
 
 ## Task Commits
 
-1. **Task 1: Create src/app/api/ingest/route.ts** - `4f83758` (feat)
+1. **Task 1: Create src/app/api/ingest/route.ts** - `e562ec4` (feat)
+2. **Task 2: Checkpoint human-verify** - All 7 steps passed (approved by user)
 
 ## Files Created/Modified
 
@@ -97,11 +99,18 @@ None — no new external service configuration required for this plan. INGEST_SE
 
 ## Next Phase Readiness
 
-- Phase 3 ingestion pipeline is complete (Plans 01, 02, 03 all done)
-- Human verification checkpoint (Task 2) awaits: TypeScript check, CLI run against live Neon DB, SQL queries, idempotency check, curl auth checks
-- Once checkpoint passes, Phase 4 (RAG query pipeline) can proceed
-- The ingest HTTP route is ready for production use after Vercel deploy
+- Phase 3 ingestion pipeline is fully complete and verified (Plans 01, 02, 03 all done; all 7 checkpoint steps passed)
+- Neon `doc_chunks` table populated with 8 documents, 1536-dim embeddings, IVFFlat index active
+- Phase 4 (RAG query pipeline / chat API) can proceed immediately — vector store is ready for cosine similarity queries
+- HTTP route ready for production use after Vercel deploy (INGEST_SECRET already configured in Vercel dashboard)
+
+---
+## Self-Check: PASSED
+
+- `src/app/api/ingest/route.ts` exists and confirmed at commit `e562ec4`
+- Human verification checkpoint: all 7 steps passed per user confirmation
+- SUMMARY.md updated to reflect full plan completion
 
 ---
 *Phase: 03-ingestion-pipeline*
-*Completed: 2026-03-06*
+*Completed: 2026-03-07*

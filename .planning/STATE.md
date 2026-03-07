@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-02-PLAN.md (ingest CLI entry point + npm script)
-last_updated: "2026-03-07T04:25:39.263Z"
+stopped_at: Completed 03-03-PLAN.md (ingest HTTP route + human-verify checkpoint passed)
+last_updated: "2026-03-07T04:49:02.213Z"
 last_activity: 2026-03-07 — Phase 3 Plan 01 complete; src/lib/ingest.ts created
 progress:
   total_phases: 9
@@ -58,6 +58,7 @@ Progress: [██░░░░░░░░] 26%
 | Phase 03-ingestion-pipeline P01 | 1 | 1 task | 1 file |
 | Phase 03-ingestion-pipeline P03 | 8 | 1 tasks | 2 files |
 | Phase 03-ingestion-pipeline P02 | 1 | 2 tasks | 2 files |
+| Phase 03-ingestion-pipeline P03 | 20 | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -91,6 +92,8 @@ Recent decisions affecting current work:
 - [Phase 03-ingestion-pipeline]: Fail-closed auth order: INGEST_SECRET env check (500) before header match (401) to avoid leaking secret existence
 - [Phase 03-ingestion-pipeline]: scripts/ingest.ts is a thin wrapper with zero business logic — all ingestion logic lives in src/lib/ingest.ts for reuse by the HTTP route
 - [Phase 03-ingestion-pipeline]: NODE_TLS_REJECT_UNAUTHORIZED=0 placed in npm script string (not .env files) — runtime OpenAI calls go through Crowe SSL proxy; must stay shell-only
+- [Phase 03-ingestion-pipeline]: maxDuration = 60 must be a top-level named export in route.ts — Vercel reads it at build time, not runtime
+- [Phase 03-ingestion-pipeline]: Fail-closed auth order: INGEST_SECRET env check (500) before header match (401) — avoids leaking that a secret exists when env is misconfigured
 
 ### Pending Todos
 
@@ -104,6 +107,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T04:25:39.253Z
-Stopped at: Completed 03-02-PLAN.md (ingest CLI entry point + npm script)
+Last session: 2026-03-07T04:49:02.202Z
+Stopped at: Completed 03-03-PLAN.md (ingest HTTP route + human-verify checkpoint passed)
 Resume file: None
