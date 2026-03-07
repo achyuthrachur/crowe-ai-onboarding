@@ -28,13 +28,13 @@
 
 ### Ingestion Pipeline
 
-- [ ] **INGS-01**: `scripts/ingest.ts` CLI script — reads all .md files from `/docs` (skips `00-PRD.md`), chunks, batch-embeds, upserts to pgvector
-- [ ] **INGS-02**: Embedding calls are batched (single `openai.embeddings.create({ input: [...] })` for all chunks of a doc) — not called per-chunk
-- [ ] **INGS-03**: Ingestion is idempotent — deletes existing rows for a `docId` before re-inserting
-- [ ] **INGS-04**: IVFFlat index (`vector_cosine_ops`, `lists=100`) created after all rows are inserted — not in schema migration
+- [x] **INGS-01**: `scripts/ingest.ts` CLI script — reads all .md files from `/docs` (skips `00-PRD.md`), chunks, batch-embeds, upserts to pgvector
+- [x] **INGS-02**: Embedding calls are batched (single `openai.embeddings.create({ input: [...] })` for all chunks of a doc) — not called per-chunk
+- [x] **INGS-03**: Ingestion is idempotent — deletes existing rows for a `docId` before re-inserting
+- [x] **INGS-04**: IVFFlat index (`vector_cosine_ops`, `lists=100`) created after all rows are inserted — not in schema migration
 - [ ] **INGS-05**: `npm run ingest` command defined in `package.json`
 - [ ] **INGS-06**: `src/app/api/ingest/route.ts` — POST endpoint protected by `x-ingest-secret` header; fail-closed (rejects if env var missing or header mismatch)
-- [ ] **INGS-07**: Successful `npm run ingest` populates database with non-null embeddings (verifiable in Neon console)
+- [x] **INGS-07**: Successful `npm run ingest` populates database with non-null embeddings (verifiable in Neon console)
 
 ### Chat API
 
@@ -157,13 +157,13 @@
 | RAGG-05 | Phase 2 | Complete |
 | RAGG-06 | Phase 2 | Complete |
 | RAGG-07 | Phase 2 | Complete |
-| INGS-01 | Phase 3 | Pending |
-| INGS-02 | Phase 3 | Pending |
-| INGS-03 | Phase 3 | Pending |
-| INGS-04 | Phase 3 | Pending |
+| INGS-01 | Phase 3 | Complete |
+| INGS-02 | Phase 3 | Complete |
+| INGS-03 | Phase 3 | Complete |
+| INGS-04 | Phase 3 | Complete |
 | INGS-05 | Phase 3 | Pending |
 | INGS-06 | Phase 3 | Pending |
-| INGS-07 | Phase 3 | Pending |
+| INGS-07 | Phase 3 | Complete |
 | CHAT-01 | Phase 4 | Pending |
 | CHAT-02 | Phase 4 | Pending |
 | CHAT-03 | Phase 4 | Pending |

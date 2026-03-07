@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: planning
-stopped_at: Phase 3 context gathered
-last_updated: "2026-03-07T03:56:46.092Z"
-last_activity: 2026-03-06 — Roadmap created; all 9 phases defined with success criteria; 61/61 requirements mapped
+status: in_progress
+stopped_at: Completed 03-01-PLAN.md (ingest.ts shared module)
+last_updated: "2026-03-07T04:20:37Z"
+last_activity: 2026-03-07 — Phase 3 Plan 01 executed; src/lib/ingest.ts created with batch embedding, idempotent DELETE+INSERT, IVFFlat index build
 progress:
   total_phases: 9
   completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
-  percent: 0
+  total_plans: 10
+  completed_plans: 7
+  percent: 26
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-06)
 
 **Core value:** New hires can immediately access Crowe AI practice knowledge — stack decisions, branding standards, workflows, and project patterns — without digging through documents or asking someone.
-**Current focus:** Phase 1 — Infrastructure Setup
+**Current focus:** Phase 3 — Ingestion Pipeline
 
 ## Current Position
 
-Phase: 1 of 9 (Infrastructure Setup)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-03-06 — Roadmap created; all 9 phases defined with success criteria; 61/61 requirements mapped
+Phase: 3 of 9 (Ingestion Pipeline)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-03-07 — Phase 3 Plan 01 complete; src/lib/ingest.ts created
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [██░░░░░░░░] 26%
 
 ## Performance Metrics
 
@@ -55,6 +55,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-rag-app-scaffold P01 | 7 | 2 tasks | 22 files |
 | Phase 02-rag-app-scaffold P03 | 15 | 3 tasks | 5 files |
 | Phase 02-rag-app-scaffold P02 | 4 | 2 tasks | 3 files |
+| Phase 03-ingestion-pipeline P01 | 1 | 1 task | 1 file |
 
 ## Accumulated Context
 
@@ -80,6 +81,10 @@ Recent decisions affecting current work:
 - [Phase 02-rag-app-scaffold]: No IVFFlat index in doc_chunks migration — deferred to Phase 3 after ingestion
 - [Phase 02-rag-app-scaffold]: Tailwind v4 does not use tailwind.config.ts for token generation — @theme in globals.css is the v4 mechanism; tailwind.config.ts kept as documentation artifact only
 - [Phase 02-rag-app-scaffold]: page.tsx is a minimal Server Component with no lib/ imports — bg-crowe-indigo-dark proves token resolution at build time
+- [Phase 03-ingestion-pipeline P01]: Batch embedding: one openai.embeddings.create({ input: string[] }) call per doc — avoids rate limits and Vercel timeout
+- [Phase 03-ingestion-pipeline P01]: No sql.transaction() — uncertain API in @neondatabase/serverless ^1.0.2; sequential awaits used instead
+- [Phase 03-ingestion-pipeline P01]: IVFFlat index created in ingestAll after all inserts complete (not in migration)
+- [Phase 03-ingestion-pipeline P01]: console.log inside ingestDoc (not CLI wrapper) so HTTP route also emits progress to Vercel logs
 
 ### Pending Todos
 
@@ -93,6 +98,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T03:56:46.087Z
-Stopped at: Phase 3 context gathered
-Resume file: .planning/phases/03-ingestion-pipeline/03-CONTEXT.md
+Last session: 2026-03-07T04:20:37Z
+Stopped at: Completed 03-01-PLAN.md (ingest.ts shared module)
+Resume file: .planning/phases/03-ingestion-pipeline/03-02-PLAN.md
