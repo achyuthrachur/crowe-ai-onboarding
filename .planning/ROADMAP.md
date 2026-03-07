@@ -145,7 +145,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 →
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Infrastructure Setup | 3/3 | Complete    | 2026-03-06 |
-| 2. RAG App Scaffold | 3/3 | Complete   | 2026-03-07 |
+| 2. RAG App Scaffold | 3/3 | Complete    | 2026-03-07 |
 | 3. Ingestion Pipeline | 0/TBD | Not started | - |
 | 4. Chat API | 0/TBD | Not started | - |
 | 5. Chat UI | 0/TBD | Not started | - |
