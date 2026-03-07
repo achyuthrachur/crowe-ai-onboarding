@@ -33,7 +33,7 @@
 - [x] **INGS-03**: Ingestion is idempotent — deletes existing rows for a `docId` before re-inserting
 - [x] **INGS-04**: IVFFlat index (`vector_cosine_ops`, `lists=100`) created after all rows are inserted — not in schema migration
 - [ ] **INGS-05**: `npm run ingest` command defined in `package.json`
-- [ ] **INGS-06**: `src/app/api/ingest/route.ts` — POST endpoint protected by `x-ingest-secret` header; fail-closed (rejects if env var missing or header mismatch)
+- [x] **INGS-06**: `src/app/api/ingest/route.ts` — POST endpoint protected by `x-ingest-secret` header; fail-closed (rejects if env var missing or header mismatch)
 - [x] **INGS-07**: Successful `npm run ingest` populates database with non-null embeddings (verifiable in Neon console)
 
 ### Chat API
@@ -162,7 +162,7 @@
 | INGS-03 | Phase 3 | Complete |
 | INGS-04 | Phase 3 | Complete |
 | INGS-05 | Phase 3 | Pending |
-| INGS-06 | Phase 3 | Pending |
+| INGS-06 | Phase 3 | Complete |
 | INGS-07 | Phase 3 | Complete |
 | CHAT-01 | Phase 4 | Pending |
 | CHAT-02 | Phase 4 | Pending |

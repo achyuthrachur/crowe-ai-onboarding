@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: in_progress
-stopped_at: Completed 03-01-PLAN.md (ingest.ts shared module)
-last_updated: "2026-03-07T04:20:37Z"
-last_activity: 2026-03-07 — Phase 3 Plan 01 executed; src/lib/ingest.ts created with batch embedding, idempotent DELETE+INSERT, IVFFlat index build
+status: executing
+stopped_at: Completed 03-03-PLAN.md (ingest HTTP route) — awaiting human verification checkpoint
+last_updated: "2026-03-07T04:25:27.451Z"
+last_activity: 2026-03-07 — Phase 3 Plan 01 complete; src/lib/ingest.ts created
 progress:
   total_phases: 9
-  completed_phases: 2
-  total_plans: 10
-  completed_plans: 7
+  completed_phases: 3
+  total_plans: 9
+  completed_plans: 9
   percent: 26
 ---
 
@@ -56,6 +56,8 @@ Progress: [██░░░░░░░░] 26%
 | Phase 02-rag-app-scaffold P03 | 15 | 3 tasks | 5 files |
 | Phase 02-rag-app-scaffold P02 | 4 | 2 tasks | 3 files |
 | Phase 03-ingestion-pipeline P01 | 1 | 1 task | 1 file |
+| Phase 03-ingestion-pipeline P03 | 8 | 1 tasks | 2 files |
+| Phase 03-ingestion-pipeline P02 | 1 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -85,6 +87,8 @@ Recent decisions affecting current work:
 - [Phase 03-ingestion-pipeline P01]: No sql.transaction() — uncertain API in @neondatabase/serverless ^1.0.2; sequential awaits used instead
 - [Phase 03-ingestion-pipeline P01]: IVFFlat index created in ingestAll after all inserts complete (not in migration)
 - [Phase 03-ingestion-pipeline P01]: console.log inside ingestDoc (not CLI wrapper) so HTTP route also emits progress to Vercel logs
+- [Phase 03-ingestion-pipeline]: maxDuration = 60 must be top-level export in route.ts — Vercel reads at build time not runtime
+- [Phase 03-ingestion-pipeline]: Fail-closed auth order: INGEST_SECRET env check (500) before header match (401) to avoid leaking secret existence
 
 ### Pending Todos
 
@@ -98,6 +102,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T04:20:37Z
-Stopped at: Completed 03-01-PLAN.md (ingest.ts shared module)
-Resume file: .planning/phases/03-ingestion-pipeline/03-02-PLAN.md
+Last session: 2026-03-07T04:25:14.861Z
+Stopped at: Completed 03-03-PLAN.md (ingest HTTP route) — awaiting human verification checkpoint
+Resume file: None
