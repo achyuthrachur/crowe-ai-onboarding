@@ -1,15 +1,10 @@
 import type { NextConfig } from "next";
-import path from "path";
 
 const nextConfig: NextConfig = {
   experimental: {
     // Use Windows system TLS certificates — required on Crowe network (SSL proxy)
+    // No-op on Vercel (Linux), safe to leave in place
     turbopackUseSystemTlsCerts: true,
-  },
-  turbopack: {
-    // Explicitly set workspace root to this project directory to avoid
-    // Turbopack picking up C:\Users\RachurA\package-lock.json as workspace root
-    root: path.resolve(__dirname),
   },
 };
 
